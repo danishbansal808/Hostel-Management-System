@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><b>Name:</b></td>
+        <td><%=data[0].Name%></td>
+      </tr>
+      <tr>
+        <td><b>Floor:</b></td>
+        <td><%=data[0].Floor%></td>
+      </tr>
+      <tr>
+        <td><b>Room:</b></td>
+        <td><%=data[0].Room%></td>
+      </tr>
+      <tr>
+        <td><b>Complaint:</b></td>
+        <td><%=data[0].Complaints%></td>
+      </tr>
+      <tr>
+        <td><b>Description:</b></td>
+        <td><%=data[0].Description%></td>
+      </tr>
+      <tr>
+        <td><b>Status:</b></td>
+        <%if((data[0].Read)===0){%>
+        <td>In Process</td>
+        <%}else{%>
+        <td>Processed and Solved</td>
+        <%}%>
+      </tr>
+    </table>
+  </body>
+</html>

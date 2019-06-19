@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="This is Description">
+  <meta name="author" content="Danish Bansal">
+
+  <title>hostel</title>
+  <link href="/resources/global/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<div class="container-fluid">
+      <div class="row">
+        <div class="col d-none d-sm-block text-center">
+          <a href="home"><img src="../assets/homepage/banda singh bahadur.jpg" class="img-thumbnail box"></a>
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-9 text-center">
+          <div style="background-color:skyblue" class="shadow mb-3 rounded">
+            <h1>hostel</h1>
+            <h2>Hostel</h2>
+            <h2 class="d-none d-sm-block">Block C</h2>
+          </div>
+        </div>
+        <div class="col d-none d-md-block text-center">
+          <a href="http://www.punjabiuniversity.ac.in/" target="_blank"><img src="../assets/homepage/logo.jpg" class="img-thumbnail box"></a>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="contact">Contacts</a>
+            <a class="nav-item nav-link " href="news">news</a>
+            <% if(isAuthenticatedadmin){%>
+              <a class="nav-item nav-link" href="/adminprofile">Profile</a>
+              <a class="nav-item nav-link" href="/addmessdata">Add Mess Data</a>
+              <a class="nav-item nav-link" href="/admin_logout">Logout</a>
+            <%} else{ %>
+              <% if(!isAuthenticatedstudent) {%>
+              <a class="nav-item nav-link " href="admin_login">Admin</a>
+            <%}}%>
+              <% if(isAuthenticatedstudent){%>
+                <a class="nav-item nav-link" href="/student_logout">Logout</a>
+              <%} else{ %>
+                <% if(!isAuthenticatedadmin) {%>
+                <a class="nav-item nav-link " href="student_login">Login</a>
+              <%}}%>
+          </div>
+        </div>
+      </nav>
+    </div>
+</html>

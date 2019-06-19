@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Choose Hostel</title>
+	 <link rel="stylesheet" href="resources/global/css/bootstrap.min.css">
+  <script src="resources/global/js/popper.min.js"></script>
+  <script src="resources/global/js/jQuery.js"></script>
+
+  <script src="resources/global/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="resources/choosehostel/css/hms.css">
+</head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<body  class="mydiv"  class="container">
+	<div style="font-size: 60px;text-align: center;position:relative;top:300px;color:black;" >Hostel Management System</div>
+
+
+	    <!--button and dropdown  for selection of hostels  -->
+	<form method="POST" action="/" name="hostel">
+<!--	<div class="dropdown">
+		<button type="button" class="dropdown-toggle btn btn-success" data-toggle="dropdown"> SELECT THE HOSTEL  <span class="caret"></span></button>
+		<ul class="dropdown-menu" >
+       		 <li class="dropdown-header" style="color:blue;"> -HOSTELS-</li>
+       		 <li value="MAI BHAGO">MAI BHAGO</a></li>
+       		 	 <li name"hostel" value="BANDA SINGH BHADUR">BANDA SINGH BHADUR</li>
+        	 	 <li name"hostel" value="TEG BHADUR"><a href='/studenthome'>TEG BHADUR</a></li>
+             <li name"hostel" value="LAKSHMI BAI">LAKSHMI BAI</li>
+             <li name"hostel" value="SPORTS BOYS">SPORTS BOYS</li>
+             <li name"hostel" value="SPORTS GIRLS">SPORTS GIRLS</li>
+       </ul>
+   </div>-->
+	 <select class="form-control" onchange="hostel.submit()">
+                <option selected=""> Complaints </option>
+                <option value="Electrician">Electrician</option>
+                <option value="Carpainter">Carpainter</option>
+                <option value="Plumber">Plumber</option>
+                <option value="Other">Other</option>
+    </select>
+ </form>
+   <a href="/student_register" class="btn btn-success me"> NEW REGISTRATION </a>
+
+
+
+
+</body>
+</html>
