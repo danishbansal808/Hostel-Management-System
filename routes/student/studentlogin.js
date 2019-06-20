@@ -11,10 +11,11 @@ var urlencodedParser = bodyparser.urlencoded({
   extended: true
 });
 app.get('/student_login',studentregister, function(req, res) {
-  res.render('studentlogin');
+  res.render('studentlogin',{errors:''});
 })
 app.post('/student_login',studentregister,urlencodedParser,passport.authenticate('student',{
   successRedirect:'/profile',
-  faliureRedirect:'/student_login'
+  faliureRedirect:'/student_register',
+  failureFlash: true
 }));
 module.exports = app;

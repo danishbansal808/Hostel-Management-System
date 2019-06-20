@@ -13,6 +13,7 @@ const session = require('express-session');
 //Passport is used to Authunticate session with cookie
 const passport = require('passport');
 //Stores session in our database
+const chalk = require('chalk');
 var store = require('express-mysql-session')(session);
 //Strategy used to authenticate a session
 const LocalStrategy = require('passport-local');
@@ -72,13 +73,13 @@ passport.use('student',new LocalStrategy(
       sql = `SELECT Password,ID FROM users WHERE Email = ?`;
       data=[email]
       connection.query(sql,data,function(err, row, field){
-        console.log("Connected to login Database");
+        console.log(chalk.green("Connected to login Database"));
         if (err) {done(err)};
-        console.log(row.length);
+        console.log(chalk.blue(row.length));
         if(row.length===0){
-          console.log(row[0]);
-          return done(null,false);
+          console.log(chalk.red(row[0]));
           res.redirect('/student_login')
+          return done(null,false);
         }
         else{
           var hash=row[0].Password.toString();
@@ -86,9 +87,9 @@ passport.use('student',new LocalStrategy(
             if(res=== true){
                 return done(null,{user_id:row[0].ID});
             }
-            else{
+            if(res===false){
+              console.log(chalk.red(hash))
               return done(null,false);
-
             }
           })
         }
